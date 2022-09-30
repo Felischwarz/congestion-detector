@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Nutzer\Desktop\congestion-detector"
+VIRTUAL_ENV="C:\Users\Nutzer\Desktop\business\Fiverr\clients\stefan_be\congestion detector\congestion-detector"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
