@@ -6,7 +6,7 @@ import dateutil.rrule
 from datetime import datetime, timedelta, timezone
 import pytz
 
-ical_url = "https://calendar.google.com/calendar/ical/cfbfbddb%40gmail.com/private-5695e575d0fb4d180171719c0dfb7174/basic.ics"
+ical_url = ""
 
 #Event name in google calendar has to match exactly to this string
 kita_opening_hours_appointement_name = "Kita Öffnungszeiten"
