@@ -81,10 +81,3 @@ def menu():
 
 if __name__ == "__main__":
 	menu()
-'''
-TO_DO:
-mehrere tokens gleichzeitig verwenden
-zugriffe per mail anfragen?
-
-billing account anfordern!
-'''
