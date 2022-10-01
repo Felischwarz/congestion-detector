@@ -6,16 +6,21 @@ import dateutil.rrule
 from datetime import datetime, timedelta, timezone
 import pytz
 
+import os
+
 ical_url = ""
 
 #Event name in google calendar has to match exactly to this string
 kita_opening_hours_appointement_name = "Kita Öffnungszeiten"
 
-def load_ical(ical_url):
+def load_ical(ical_url, profile):
 	data = requests.get(ical_url, allow_redirects=True)
-	open('cal.ics', 'wb').write(data.content)
 
-	ics = open('cal.ics','rb')
+	if not os.path.exists("ical_data"):
+		os.makedirs("ical_data")
+
+	open(f'ical_data/{profile}.ics', 'wb').write(data.content)
+	ics = open(f'ical_data/{profile}.ics','rb')
 
 	calendar = Calendar.from_ical(ics.read())
 	return calendar
@@ -35,7 +40,7 @@ def is_kita_open(calendar):
 	return False
 
 
-#returns None is Kita is closed
+#returns None if Kita is closed
 def get_time_left_until_kita_closes(calendar):
 	if not is_kita_open(cal):
 		return None
@@ -54,3 +59,4 @@ def get_time_left_until_kita_closes(calendar):
 			return time_left
 
 	return None
+

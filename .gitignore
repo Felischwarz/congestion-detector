@@ -3,3 +3,5 @@
 /credentials.json
 /token.json
 ical_data/
+/config.py
+__pycache__/

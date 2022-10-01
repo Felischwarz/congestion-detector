@@ -1,5 +1,5 @@
 import pickle
-
+from ical import load_ical, is_kita_open, get_time_left_until_kita_closes
 
 class User:
 	def __init__(self, username, email_adress, route, calendar_url):
@@ -81,3 +81,9 @@ def menu():
 
 if __name__ == "__main__":
 	menu()
+
+'''
+to do:
+google maps 
+prüfintervall einstellung
+'''
