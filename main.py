@@ -103,7 +103,7 @@ def scan():
 				dur_in_traffic = res[1]
 
 				if res: 
-					if True: #res[0]: #if there is congestion
+					if res[0]: #if there is congestion
 						#structure: (True, dur_in_traffic, dur, obj["routes"][0]["legs"][0]["start_address"], obj["routes"][0]["legs"][0]["end_address"])
 						if dur_in_traffic > time_left.total_seconds():
 
@@ -118,7 +118,7 @@ def scan():
 							time.sleep(6*60*60) #heute keine Abfragen mehr notwendig
 
 						else:
-							print(f"Überprüfung der Verkehrslage: Verspätungen!. Geschätze Fahrzeit: {str(int(dur_in_traffic / 60))} (statt {str(int(res[2] / 60))}).")
+							print(f"Überprüfung der Verkehrslage: Verspätungen! Geschätze Fahrzeit: {str(int(dur_in_traffic / 60))} Minuten (statt {str(int(res[2] / 60))}).")
 
 					else:
 						print(f"Überprüfung der Verkehrslage: keine Verspätungen. Geschätze Fahrzeit: {str(int(dur_in_traffic / 60))} Minuten")
